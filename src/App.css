@@ -15,7 +15,8 @@ body{
     text-align: center;
 }
 .AutoComplete{
-    height: 7rem;
+    position: relative;
+    height: 4rem;
     width: 12rem;
     overflow: auto;
 }
@@ -26,8 +27,12 @@ body{
 h1{
    text-align: center;
    font-size: 1.7rem;
+   transition: all .5s;
 }
-
+h1:hover{
+    transform: rotate(10deg);
+    color: gold;
+}
 /*Buscador seccion*/
 .Search{
 font-size: 1rem;
@@ -59,13 +64,12 @@ margin-top: 2rem;
     align-items: center;
     margin: auto;
     width: 100%;
-    height: 15rem;
     background: linear-gradient(90deg, rgba(0,0,0,0.9920167896260067) 0%, rgba(46,142,46,0.9976190305223652) 81%, rgba(15,231,26,1) 100%);
     color: rgb(253, 251, 251);
     gap: 1rem;
     text-shadow: 5px 5px 3px black;
     box-shadow: 2px 2px 10px 2px green;
-    border-radius:2% 2% 30% 30%; 
+    border-radius:0% 0% 25% 25%; 
 }
 
 .portada img{
@@ -202,16 +206,8 @@ flex-direction: column;
 }
 }
     
-@media screen and (min-width:350px){
-    .header-search{
-        height: 12rem;
-    }
-    }
-    @media screen and (min-width:500px){
-        .header-search{
-            height: 11rem;
-        }
-        }
+
+   
 @media screen and (min-width:700px){
     
     .Footer ul{

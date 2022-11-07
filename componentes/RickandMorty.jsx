@@ -84,7 +84,7 @@ setId("")
             </ul>
             
             <form onSubmit={muestra} >
-            <input type="text" value={id} placeholder="Buscador de ID-solo existen 126 id de ubicaciones" onChange={buscador} onFocus={lista} onBlur={listaend}  key={keyInput} />
+            <input type="text" value={id} onFocus={lista} onBlur={listaend} placeholder="Buscador de ID-solo existen 126 id de ubicaciones" onChange={buscador}  key={keyInput} />
                 <button>Buscar</button>
             </form>
             <div className='AutoComplete'>

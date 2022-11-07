@@ -9,7 +9,6 @@ const Autocomplete = ({coms}) => {
 
 useEffect(()=>{
 setUbi(coms)
-
 },[])
 
 
