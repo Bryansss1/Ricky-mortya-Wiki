@@ -174,22 +174,21 @@ display: grid;
 /*footer seccion*/
 .Footer{
     background-color: rgb(44, 44, 44);
-    width: 100%;
-   
+   width: 100%;
     text-align: center;
 }
 
 .Footer ul{
+    display: flex;
     margin-top: 4rem;
  text-align: center;
     justify-content: center;
     list-style: none;
     flex-direction: column;
-    display: flex;
- gap: .5rem;
     justify-content: center;
 }
 .Footer li{
+    margin-top:1rem;
     border-bottom: 1px solid gray;
 }
 i{
