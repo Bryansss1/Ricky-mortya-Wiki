@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const RickItems = ({url}) => {
+const RickItems = ({url,key}) => {
     const [characterss,setCharacters]=useState({})
    
     useEffect(()=>{
@@ -12,8 +12,10 @@ const RickItems = ({url}) => {
         .catch(error=>console.error("falta la busqueda"))
     },[])
 
+
     return (
-        <div key={characterss.id} className='card'>
+        
+        <div key={key} className='card'>
             <small>{characterss.status==="Dead" ||characterss.status==="unknown" ?characterss.status+"🔴":characterss.status +"🟢"}</small>
             <img src={characterss.image}/>
             <h3 className='name-card'>{characterss.name}</h3>
@@ -26,6 +28,7 @@ const RickItems = ({url}) => {
             </ul>
            
         </div>
+        
     );
 };
 

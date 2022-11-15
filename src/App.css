@@ -20,6 +20,7 @@ body{
     width: 12rem;
     overflow: auto;
 }
+
 .AutoComplete p{
     margin-top: .5rem;
 }
@@ -43,6 +44,8 @@ align-items: center;
 list-style: none;
 margin:0rem 1rem;
 margin-top: 2rem;
+border-bottom: 2px solid black;
+border-top:  2px solid rgb(11, 54, 1);
 }
 
 .header-search li:hover{
@@ -69,7 +72,6 @@ margin-top: 2rem;
     gap: 1rem;
     text-shadow: 5px 5px 3px black;
     box-shadow: 2px 2px 10px 2px green;
-    border-radius:0% 0% 25% 25%; 
 }
 
 .portada img{
@@ -103,6 +105,12 @@ margin-right: .2rem;
     box-shadow: 2px 2px 10px 2px rgb(28, 4, 241);
     transform: scale(1.2);
     background: rgb(201, 245, 181);
+    position: relative;
+}
+
+.header-search input:focus{
+    position: relative;
+    animation:search 2s infinite;
 }
 /*carta seccion*/
 .card small{
@@ -152,12 +160,39 @@ box-shadow: 2px 20px 10px 2px rgb(99, 255, 99);
     text-shadow: 2px 1px 1px black;
     box-shadow: 2px -3px 10px 2px rgb(53, 253, 3);
     border-radius:10% 10% 2% 2%;
-    transition: transform .5s;
+    transition: all .5s;
     padding: 1rem ;
 }
 .card:hover{
 transform:scale(1.1,1) ;
+position: relative;
+animation: card 1.5s infinite;
+}
+@keyframes search{
+    0%{
+        bottom: .2rem;
+    }
 
+    50%{
+        bottom: .5rem;
+    }
+
+    100%{
+        bottom: .2rem;
+    }
+}
+@keyframes card{
+    0%{
+        bottom: .5rem;
+    }
+
+    50%{
+        bottom: 1rem;
+    }
+
+    100%{
+        bottom: .5rem;
+    }
 }
 
 .name-card{

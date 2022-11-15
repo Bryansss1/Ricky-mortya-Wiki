@@ -11,6 +11,8 @@ const[id,setId]=useState("")
 const [location,setLoca]=useState({})
 const[search,setSearch]=useState(false)
 const[full,setfull]=useState([])
+const [nputIdd,setIdinput]=useState("")
+
 
 useEffect(()=>{
     const result=[]
@@ -33,11 +35,14 @@ useEffect(()=>{
 
 const keyInput="bryansss1"
 
+
+
 useEffect(()=>{
     const ramdonid=Math.floor(Math.random()*120)+1
     axios.get(`https://rickandmortyapi.com/api/location/${ramdonid}`)
     .then(res=>setLoca(res.data))
-    .catch(error=>console.error("falta la busqueda"))
+    .catch(error=>console.error(error
+        ))
 },[])
 
 
@@ -63,12 +68,29 @@ const listaend=()=>{
     setSearch(false)
 }
 
+const Buscarg=(ubica)=>{
+console.log(ubica)
+}
+
 const muestra=(e)=>{
 e.preventDefault()
 setId( axios.get(`https://rickandmortyapi.com/api/location/${id}`)
 .then(res=>setLoca(res.data)))
 setId("")
 }
+
+const [page,setPage]=useState(1)
+const pagepase=5
+const lastIndex=page*pagepase
+const firstIndex=lastIndex-pagepase
+const pagesCha=location.residents?.slice(firstIndex,lastIndex)
+const totalPagers=Math.ceil(location.residents?.length/pagepase)
+
+const numbersPage=[]
+for(let i=0;i<=totalPagers;i++){
+    numbersPage.push(i)
+}
+
 
     return (
         <div key={location.id}>  
@@ -88,17 +110,30 @@ setId("")
                 <button>Buscar</button>
             </form>
             <div className='AutoComplete'>
-         {search?<Autocomplete key={full.length} coms={full}/>:""}
+         {search?<Autocomplete buscarg={Buscarg} coms={full}/>:""}
             </div>
             </section>
 
-            <article className='cards-container'>
-            {location.residents?.length===0?<h2 className='h2-nobody' key={location.id}>nobody live here...</h2>:location.residents?.map(urlz=>{
+
+            <article  className='cards-container'>
+            {location.residents?.length===0?<h2 className='h2-nobody'>nobody live here...</h2>:location.residents?.map((urlz)=>{
                     return(
-                        <RickItems key={urlz.id} url={urlz}/>
+                        <RickItems key={urlz.image} url={urlz}/>
                     )
             })}
             </article>
+{/* 
+            <div>
+                <button onClick={()=>setPage(page-1)} disabled={page===1}>prev</button>
+                <button onClick={()=>setPage(page+1)}>next</button>
+            </div>
+
+            {numbersPage.map(number=>{
+                return(
+                <button onClick={()=>setPage(number)}>{number}</button>
+                )
+            })}
+*/}
             <footer className='Footer'>
             <ul>
                 <li>Creador:Bryansss1/Bryan David Sanabria Azuaje</li>

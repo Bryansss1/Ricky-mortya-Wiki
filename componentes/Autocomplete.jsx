@@ -3,7 +3,7 @@ import Autosuggest from "react-autosuggest"
 import { useState } from 'react';
 
 
-const Autocomplete = ({coms}) => {
+const Autocomplete = ({coms,buscarg}) => {
  
     const[ubi,setUbi]=useState([])
 
@@ -19,9 +19,9 @@ setUbi(coms)
                 
             const filtros=objs.results.map((ubi)=>{
                     return(
-                        <>
-                        <p key={ubi.id}>{ubi.id}-{ubi.name} {ubi.type}</p>
-                        </>
+                        <div key={ubi.id}>
+                        <p onClick={()=>buscarg(ubi)} >{ubi.id}-{ubi.name} {ubi.type}</p>
+                        </div>
                     )
                  })
                  return filtros
