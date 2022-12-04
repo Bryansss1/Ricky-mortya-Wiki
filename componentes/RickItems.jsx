@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const RickItems = ({url,key}) => {
+const RickItems = ({url}) => {
     const [characterss,setCharacters]=useState({})
    
     useEffect(()=>{
@@ -15,7 +15,7 @@ const RickItems = ({url,key}) => {
 
     return (
         
-        <div key={key} className='card'>
+        <div key={characterss.image} className='card'>
             <small>{characterss.status==="Dead" ||characterss.status==="unknown" ?characterss.status+"🔴":characterss.status +"🟢"}</small>
             <img src={characterss.image}/>
             <h3 className='name-card'>{characterss.name}</h3>

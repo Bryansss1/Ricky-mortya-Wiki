@@ -215,17 +215,16 @@ display: grid;
 
 .Footer ul{
     display: flex;
-    margin-top: 4rem;
- text-align: center;
+    margin-top: 3rem;
+    text-align: center;
     justify-content: center;
     list-style: none;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
 }
-.Footer li{
-    margin-top:1rem;
-    border-bottom: 1px solid gray;
-}
+
 i{
     text-shadow: 2px 3px 2px green;
     color: rgb(2, 247, 124);
@@ -234,14 +233,40 @@ i{
 i:hover{
     transform: scale(1.5);
 }
+
+/*BUTTON PAGES*/
+.buttons-pages{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .9rem;
+}
+.buttons-pages button{
+    padding: .4rem;
+    border-radius: 5%;
+    border: none;
+    color:rgb(0, 0, 2);
+    background-color: rgba(10, 255, 10, 0.801);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:350px){
 .Search{
 flex-direction: column;
 }
 }
-    
-
-   
 @media screen and (min-width:700px){
     
     .Footer ul{
